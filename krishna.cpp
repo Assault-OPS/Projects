@@ -50,13 +50,9 @@ int main()
         for(int j=0;j<data.size();j++)
         {
             if(i>10-data[j])
-            {
                 cout << "%% "; 
-            }
             else
-            {
                 cout << "   ";
-            }
         }
         cout << endl;
     }
