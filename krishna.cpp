@@ -13,7 +13,7 @@ int max(vector<int> test)
             max_val = test[i];
     }
     return max_val;
-}
+} 
 
 
 int main()
@@ -22,6 +22,7 @@ int main()
     int limit;
     int values;
     int val;
+    //Input Data -------------------------
     cout << "Enter limit: ";
     cin >> limit;
     for(int i=1;i<=limit;i++)
@@ -38,28 +39,40 @@ int main()
         cin >> values;
         data.push_back(values);
     }
+    //Data Converter------------------------
     int bruh = max(data);
     for(int i=0;i<data.size();i++)
     {
-        val = (data[i]*10.0)/bruh;
+        val = (data[i]*10)/bruh; // <-- formula to convert data to graph form
         data[i] = val;
     }
+    // Bar Graph Maker (MAIN) --------------
     for(int i=1;i<11;i++)
     {
-        cout << "| ";
+        cout << "|";
         for(int j=0;j<data.size();j++)
         {
             if(i>10-data[j])
-                cout << "%% "; 
+            {
+                for(int i=0;i<to_string(bruh).length();i++)
+                    cout << "%";
+            }
             else
-                cout << "   ";
+            {
+                for(int i=0;i<to_string(bruh).length();i++)
+                    cout << " ";
+            }
+            cout << " ";
         }
         cout << endl;
     }
-    cout << "--";
+    //X-Axis--------------------------------
     for(int i=0;i<data.size();i++)
-        cout << "---";
+    {
+        for(int i=0;i<to_string(bruh).length()+1;i++)
+            cout << "-";
+    }
     cout << endl;
+    //--------------------------------------
+
 }
-
-
