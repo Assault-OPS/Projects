@@ -19,6 +19,7 @@ int max(vector<int> test)
 int main()
 {
     vector<int> data;
+    vector<int> backup;
     int limit;
     int values;
     int val;
@@ -39,6 +40,7 @@ int main()
         cin >> values;
         data.push_back(values);
     }
+    backup = data;
     //Data Converter------------------------
     int bruh = max(data);
     for(int i=0;i<data.size();i++)
@@ -47,19 +49,22 @@ int main()
         data[i] = val;
     }
     // Bar Graph Maker (MAIN) --------------
+    int dynamic_bruh = to_string(bruh).length();
     for(int i=1;i<11;i++)
     {
-        cout << "|";
+        cout << "|";  
+        if(dynamic_bruh == 1)
+            dynamic_bruh += 1;
         for(int j=0;j<data.size();j++)
         {
             if(i>10-data[j])
             {
-                for(int i=0;i<to_string(bruh).length();i++)
+                for(int i=0;i<dynamic_bruh;i++)
                     cout << "%";
             }
             else
             {
-                for(int i=0;i<to_string(bruh).length();i++)
+                for(int i=0;i<dynamic_bruh;i++)
                     cout << " ";
             }
             cout << " ";
@@ -69,10 +74,22 @@ int main()
     //X-Axis--------------------------------
     for(int i=0;i<data.size();i++)
     {
-        for(int i=0;i<to_string(bruh).length()+1;i++)
+        for(int i=0;i<dynamic_bruh+1;i++)
             cout << "-";
     }
-    cout << endl;
-    //--------------------------------------
+    cout << endl << " ";
+    for(int i=0;i<backup.size();i++)
+    {
+        int num_len = to_string(backup[i]).length();
+        cout << backup[i];
+        for(int i=0;i<dynamic_bruh-num_len;i++)
+            cout << " ";
+        cout << " ";
+    }
 
+    cout << endl;
+
+    //--------------------------------------
 }
+
+
