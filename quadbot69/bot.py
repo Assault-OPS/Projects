@@ -97,7 +97,7 @@ async def stat_error(ctx, error):
     if isinstance(error,commands.MemberNotFound):
         member = find_member(ctx,error.argument)
         await stat(ctx,member)
-client.run('NzI4MjM5MTQ5Mzk1NjA3NjAz.Xv3fjw.pMjiHgeUB8CJq2G5tBd7ORB7dww')
+client.run('TOKEN REMOVED FOR SECURITY REASONS')
 
 
 
