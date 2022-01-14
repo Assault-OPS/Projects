@@ -11,14 +11,7 @@ intents.members = True
 client = commands.Bot(command_prefix='nig ',intents=intents)
 
 firebaseConfig = {
-    "apiKey": "AIzaSyBXj2Dwqz6wNBtij8FPP8godgqoWGAgKG4",
-    "authDomain": "graphwork-91423.firebaseapp.com",
-    "databaseURL": "https://graphwork-91423-default-rtdb.firebaseio.com",
-    "projectId": "graphwork-91423",
-    "storageBucket": "graphwork-91423.appspot.com",
-    "messagingSenderId": "988895520746",
-    "appId": "1:988895520746:web:e3f93dd84c35c67ef53493",
-    "measurementId": "G-89DJSNSYJ8"
+        #database credentials
   }
 
 firebase = pyrebase.initialize_app(firebaseConfig)
